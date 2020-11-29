@@ -19,7 +19,7 @@
 #include <chrono>
 #include <algorithm>
 
-#define MAX_LINES 1000000
+#define MAX_LINES 100000
 
 using namespace std;
 
@@ -87,7 +87,8 @@ int main(void)
 	auto mergeSortBegin = chrono::high_resolution_clock::now();
 	mergeSort(mergeSortLines, 0, numLines - 1, temp);
 	auto mergeSortEnd = chrono::high_resolution_clock::now();
-
+	
+	
 	delete[] temp; // Free memory from the temp array used in mergesort
 
 	auto mergeSortDuration = chrono::duration_cast<chrono::milliseconds>(mergeSortEnd - mergeSortBegin).count(); // Obtain how long the merge sort took in milliseconds
